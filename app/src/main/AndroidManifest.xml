@@ -19,8 +19,17 @@
         <activity android:name=".SearchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.supremeinvention.WelcomeActivity">
-            </meta-data>
+                android:value="com.epicodus.supremeinvention.WelcomeActivity"></meta-data>
+        </activity>
+        <activity android:name=".SearchResultsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.supremeinvention.SearchActivity"></meta-data>
+        </activity>
+        <activity android:name=".PetProfileActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.supremeinvention.SearchResultsActivity"></meta-data>
         </activity>
     </application>
 

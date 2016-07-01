@@ -27,4 +27,28 @@
         android:id="@+id/textView2"
         android:layout_below="@+id/imageView6"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adopt Me"
+        android:id="@+id/adoptButton"
+        android:layout_marginTop="48dp"
+        android:textSize="32dp"
+        android:background="@color/colorAccent"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add To Favorites &lt;3"
+        android:id="@+id/button"
+        android:textSize="32dp"
+        android:background="@color/colorAccent2"
+        android:layout_below="@+id/adoptButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp" />
 </RelativeLayout>

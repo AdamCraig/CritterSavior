@@ -13,8 +13,8 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SearchResultsActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.petsListView) ListView mPetsListView;
+public class MyFavoritesActivity extends AppCompatActivity implements View.OnClickListener {
+    @Bind(R.id.favoritesListView) ListView mFavoritesListView;
     @Bind(R.id.petProfileButton) Button mPetProfileButton;
 
     private String[] pets = new String[] {
@@ -29,18 +29,18 @@ public class SearchResultsActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_results);
+        setContentView(R.layout.activity_my_favorites);
         ButterKnife.bind(this);
         mPetProfileButton.setOnClickListener(this);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pets);
-        mPetsListView.setAdapter(adapter);
+        mFavoritesListView.setAdapter(adapter);
     }
 
     @Override
     public void onClick(View view) {
         if (view == mPetProfileButton) {
-            Intent intent = new Intent(SearchResultsActivity.this, PetProfileActivity.class);
+            Intent intent = new Intent(MyFavoritesActivity.this, PetProfileActivity.class);
             startActivity(intent);
         }
     }

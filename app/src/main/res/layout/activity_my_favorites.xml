@@ -7,19 +7,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.epicodus.supremeinvention.SearchResultsActivity">
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/petsListView"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textView" />
+    tools:context="com.epicodus.supremeinvention.MyFavoritesActivity">
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView8"
         android:src="@drawable/logo"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -28,10 +21,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Search Results"
-        android:id="@+id/textView"
-        android:layout_below="@+id/imageView5"
+        android:text="My Favorites"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/imageView8"
         android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/favoritesListView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3" />
 
     <Button
         android:layout_width="wrap_content"

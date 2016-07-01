@@ -21,6 +21,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.supremeinvention.WelcomeActivity" />
         </activity>
+        <activity android:name=".MyFavoritesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.supremeinvention.MyPreferencesActivity" />
+        </activity>
         <activity android:name=".SearchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

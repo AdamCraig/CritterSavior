@@ -36,7 +36,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(intent);
         }
         if (view == mPreferencesButton) {
-            Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+            Intent intent = new Intent(WelcomeActivity.this, MyPreferencesActivity.class);
             startActivity(intent);
         }
         if (view == mLogoutButton) {

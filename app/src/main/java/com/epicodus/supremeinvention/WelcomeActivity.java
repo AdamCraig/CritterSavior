@@ -12,9 +12,9 @@ import butterknife.ButterKnife;
 
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.welcomeTitleTextView) TextView mWelcomeTitleTextView;
-    @Bind(R.id.logoutButton) Button mLogoutButton;
-    @Bind(R.id.preferencesButton) Button mPreferencesButton;
     @Bind(R.id.searchButton) Button mSearchButton;
+    @Bind(R.id.preferencesButton) Button mPreferencesButton;
+    @Bind(R.id.logoutButton) Button mLogoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +24,26 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         Intent intent = getIntent();
         String email = intent.getStringExtra("email");
         mWelcomeTitleTextView.setText("Welcome, " + email + "!");
+        mPreferencesButton.setOnClickListener(this);
+        mSearchButton.setOnClickListener(this);
+        mLogoutButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if (view == mLogoutButton) {
-            Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+        if (view == mSearchButton) {
+            Intent intent = new Intent(WelcomeActivity.this, SearchActivity.class);
             startActivity(intent);
         }
         if (view == mPreferencesButton) {
             Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
             startActivity(intent);
         }
-        if (view == mSearchButton) {
+        if (view == mLogoutButton) {
             Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
             startActivity(intent);
         }
+
+
     }
 }

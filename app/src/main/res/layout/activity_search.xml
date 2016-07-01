@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/zipCodeEditText"
         android:layout_below="@+id/searchTitleTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
@@ -42,23 +42,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/speciesEditText"
         android:hint="Species (Radio Buttons)"
         android:textAlignment="center"
         android:inputType="number"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/zipCodeEditText"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/sizeEditText"
         android:hint="Size (Dropdown)"
         android:textAlignment="center"
         android:inputType="number"
         android:enabled="true"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/optionalTextView"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Optional"
-        android:id="@+id/textView"
+        android:id="@+id/optionalTextView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -75,45 +75,45 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Required"
-        android:id="@+id/textView2"
+        android:id="@+id/requiredTextView"
         android:layout_below="@+id/searchTitleTextView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_alignLeft="@+id/optionalTextView"
+        android:layout_alignStart="@+id/optionalTextView" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/editText4"
+        android:id="@+id/sexEditText"
         android:hint="Sex (Radio Buttons)"
         android:textAlignment="center"
         android:inputType="number"
         android:enabled="true"
-        android:layout_below="@+id/editText3"
+        android:layout_below="@+id/sizeEditText"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/editText5"
+        android:id="@+id/breedEditText"
         android:hint="Breed (Dropdown)"
         android:textAlignment="center"
         android:inputType="number"
         android:enabled="true"
-        android:layout_below="@+id/editText4"
+        android:layout_below="@+id/sexEditText"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/editText6"
+        android:id="@+id/ageEditText"
         android:hint="Age (Dropdown)"
         android:textAlignment="center"
         android:inputType="number"
         android:enabled="true"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/breedEditText"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -126,7 +126,7 @@
         android:textSize="30dp"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorTextIcons"
-        android:layout_below="@+id/editText6"
+        android:layout_below="@+id/ageEditText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

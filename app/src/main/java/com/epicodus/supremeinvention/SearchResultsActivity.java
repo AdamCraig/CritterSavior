@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -24,6 +25,8 @@ public class SearchResultsActivity extends AppCompatActivity implements View.OnC
 
     @Bind(R.id.petsListView) ListView mPetsListView;
     @Bind(R.id.petProfileButton) Button mPetProfileButton;
+
+    public ArrayList<Pet> mPets = new ArrayList<>();
 
     private String[] pets = new String[] {
             "Fluffy",
@@ -62,15 +65,11 @@ public class SearchResultsActivity extends AppCompatActivity implements View.OnC
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
-                    Log.v(TAG, jsonData);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            public void onResponse(Call call, Response response) {
 
+                mPets = petService.processResults(response);
+
+            }
         });
     }
 

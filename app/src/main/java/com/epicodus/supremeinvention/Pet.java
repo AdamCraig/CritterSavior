@@ -12,11 +12,11 @@ public class Pet {
     String mSize;
     String mSex;
     String mAge;
-    ArrayList<String> mBreeds = new ArrayList<>();
+    String mBreed;
 
     public Pet() {}
 
-    public Pet(String name, String id, String species, String imageUrl, String size, String sex, String age, ArrayList<String> breeds) {
+    public Pet(String name, String id, String species, String imageUrl, String size, String sex, String age, String breed) {
         this.mName = name;
         this.mId = id;
         this.mSpecies = species;
@@ -24,7 +24,7 @@ public class Pet {
         this.mSize = size;
         this.mSex = sex;
         this.mAge = age;
-        this.mBreeds = breeds;
+        this.mBreed = breed;
     }
 
     public String getName() {
@@ -51,7 +51,7 @@ public class Pet {
         return mAge;
     }
 
-    public ArrayList<String> getBreeds() {
-        return mBreeds;
+    public String getBreed() {
+        return mBreed;
     }
 }

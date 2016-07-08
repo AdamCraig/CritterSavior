@@ -10,38 +10,38 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WelcomeActivity" />
-        <activity android:name=".MyPreferencesActivity">
+        <activity android:name=".ui.WelcomeActivity" />
+        <activity android:name=".ui.MyPreferencesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.supremeinvention.WelcomeActivity" />
+                android:value="com.epicodus.supremeinvention.ui.WelcomeActivity" />
         </activity>
-        <activity android:name=".MyFavoritesActivity">
+        <activity android:name=".ui.MyFavoritesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.supremeinvention.MyPreferencesActivity" />
+                android:value="com.epicodus.supremeinvention.ui.MyPreferencesActivity" />
         </activity>
-        <activity android:name=".SearchActivity">
+        <activity android:name=".ui.SearchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.supremeinvention.WelcomeActivity" />
+                android:value="com.epicodus.supremeinvention.ui.WelcomeActivity" />
         </activity>
-        <activity android:name=".SearchResultsActivity">
+        <activity android:name=".ui.SearchResultsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.supremeinvention.SearchActivity" />
+                android:value="com.epicodus.supremeinvention.ui.SearchActivity" />
         </activity>
-        <activity android:name=".PetProfileActivity">
+        <activity android:name=".ui.PetProfileActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.supremeinvention.SearchResultsActivity" />
+                android:value="com.epicodus.supremeinvention.ui.SearchResultsActivity" />
         </activity>
 
     </application>

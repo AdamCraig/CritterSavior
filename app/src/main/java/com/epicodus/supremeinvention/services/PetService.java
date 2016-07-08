@@ -1,6 +1,9 @@
-package com.epicodus.supremeinvention;
+package com.epicodus.supremeinvention.services;
 
 import android.util.Log;
+
+import com.epicodus.supremeinvention.Constants;
+import com.epicodus.supremeinvention.models.Pet;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,7 +58,15 @@ public class PetService {
                             .getJSONArray("photo")
                             .getJSONObject(2)
                             .getString("$t");
-                    String description = petJSON.getJSONObject("description").getString("$t");
+                    String description;
+
+                    try {
+                        description = petJSON.getJSONObject("description")
+                                .getString("$t");
+                    } catch (JSONException e) {
+                        description = "No description available.";
+                    }
+
                     String size = petJSON.getJSONObject("size").getString("$t");
                     String sex = petJSON.getJSONObject("sex").getString("$t");
                     String age = petJSON.getJSONObject("age").getString("$t");
@@ -64,12 +75,12 @@ public class PetService {
                     try {
                         breed = petJSON.getJSONObject("breeds")
                                 .getJSONObject("breed")
-                                .toString();
+                                .getString("$t");
                     } catch (JSONException e) {
                         breed = petJSON.getJSONObject("breeds")
                                 .getJSONArray("breed")
-                                .get(0)
-                                .toString();
+                                .getJSONObject(0)
+                                .getString("$t");
                     }
 
                     Pet pet = new Pet(name, id, species, imageUrl, description, size, sex, age, breed);

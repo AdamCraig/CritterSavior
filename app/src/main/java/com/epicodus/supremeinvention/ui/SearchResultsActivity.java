@@ -1,4 +1,4 @@
-package com.epicodus.supremeinvention;
+package com.epicodus.supremeinvention.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.epicodus.supremeinvention.R;
+import com.epicodus.supremeinvention.models.Pet;
+import com.epicodus.supremeinvention.services.PetService;
 
 import java.io.IOException;
 import java.util.ArrayList;

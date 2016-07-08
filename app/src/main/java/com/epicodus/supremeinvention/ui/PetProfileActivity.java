@@ -1,4 +1,4 @@
-package com.epicodus.supremeinvention;
+package com.epicodus.supremeinvention.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.epicodus.supremeinvention.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

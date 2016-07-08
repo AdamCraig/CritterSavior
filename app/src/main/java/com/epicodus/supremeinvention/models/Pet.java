@@ -1,4 +1,4 @@
-package com.epicodus.supremeinvention;
+package com.epicodus.supremeinvention.models;
 
 import org.parceler.Parcel;
 

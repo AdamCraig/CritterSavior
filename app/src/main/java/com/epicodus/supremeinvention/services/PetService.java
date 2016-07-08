@@ -94,6 +94,7 @@ public class PetService {
 
                     String age = petJSON.getJSONObject("age").getString("$t");
 
+//                    Check if the pet has multiple listed breeds, and if so, display just the first one
                     String breed;
                     try {
                         breed = petJSON.getJSONObject("breeds")

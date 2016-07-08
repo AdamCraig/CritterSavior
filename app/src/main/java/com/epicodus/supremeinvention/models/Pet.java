@@ -4,6 +4,7 @@ import org.parceler.Parcel;
 
 import java.util.ArrayList;
 
+@Parcel
 public class Pet {
     String mName;
     String mId;

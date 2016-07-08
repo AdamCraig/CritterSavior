@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:id="@+id/restaurantImageView"
+            android:id="@+id/petImageView"
             android:src="@drawable/dog1"
             android:scaleType="centerCrop" />
 
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Add To Favorites &lt;3"
-                android:id="@+id/saveRestaurantButton"
+                android:id="@+id/favoritePetButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorAccent"
                 android:textColor="@color/colorPrimaryText"
@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pet Name"
-                    android:id="@+id/petNameTextView"
+                    android:id="@+id/nameTextView"
                     android:textSize="20sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold"
@@ -91,8 +91,8 @@
                     android:layout_marginRight="44dp"
                     android:layout_marginEnd="44dp"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/petNameTextView"
-                    android:layout_toStartOf="@+id/petNameTextView" />
+                    android:layout_toLeftOf="@+id/nameTextView"
+                    android:layout_toStartOf="@+id/nameTextView" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -104,8 +104,8 @@
                     android:layout_marginLeft="26dp"
                     android:layout_marginStart="26dp"
                     android:layout_alignTop="@+id/breedTextView"
-                    android:layout_toRightOf="@+id/petNameTextView"
-                    android:layout_toEndOf="@+id/petNameTextView" />
+                    android:layout_toRightOf="@+id/nameTextView"
+                    android:layout_toEndOf="@+id/nameTextView" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -136,7 +136,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
                 android:id="@+id/textView4"
-                android:layout_above="@+id/saveRestaurantButton"
+                android:layout_above="@+id/favoritePetButton"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/colorAccent" />

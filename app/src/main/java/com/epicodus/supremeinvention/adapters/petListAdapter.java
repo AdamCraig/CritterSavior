@@ -46,7 +46,7 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.PetViewH
 
     public class PetViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.petImageView) ImageView mPetImageView;
-        @Bind(R.id.petNameTextView) TextView mPetNameTextView;
+        @Bind(R.id.nameTextView) TextView mPetNameTextView;
         @Bind(R.id.petBreedTextView) TextView mPetBreedTextView;
         @Bind(R.id.petSexTextView) TextView mPetSexTextView;
         @Bind(R.id.petSizeTextView) TextView mPetSizeTextView;

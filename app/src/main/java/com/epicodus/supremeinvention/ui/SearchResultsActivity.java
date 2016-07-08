@@ -3,6 +3,8 @@ package com.epicodus.supremeinvention.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -12,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.epicodus.supremeinvention.R;
+import com.epicodus.supremeinvention.adapters.PetListAdapter;
 import com.epicodus.supremeinvention.models.Pet;
 import com.epicodus.supremeinvention.services.PetService;
 
@@ -27,8 +30,10 @@ import okhttp3.Response;
 public class SearchResultsActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = SearchResultsActivity.class.getSimpleName();
 
-    @Bind(R.id.petsListView) ListView mPetsListView;
+    @Bind(R.id.petsListRecyclerView) RecyclerView mPetsListRecyclerView;
     @Bind(R.id.petProfileButton) Button mPetProfileButton;
+
+    private PetListAdapter mAdapter;
 
     public ArrayList<Pet> mPets = new ArrayList<>();
 
@@ -62,13 +67,11 @@ public class SearchResultsActivity extends AppCompatActivity implements View.OnC
 
                     @Override
                     public void run() {
-                        String[] petNames = new String[mPets.size()];
-                        for (int i = 0; i < petNames.length; i++) {
-                            petNames[i] = mPets.get(i).getName();
-                        }
-
-                        ArrayAdapter adapter = new ArrayAdapter(SearchResultsActivity.this, android.R.layout.simple_list_item_1, petNames);
-                        mPetsListView.setAdapter(adapter);
+                        mAdapter = new PetListAdapter(getApplicationContext(), mPets);
+                        mPetsListRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchResultsActivity.this);
+                        mPetsListRecyclerView.setLayoutManager(layoutManager);
+                        mPetsListRecyclerView.setHasFixedSize(true);
                     }
                 });
 

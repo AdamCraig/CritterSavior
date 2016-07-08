@@ -26,7 +26,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         if (view == mSearchButton) {
+            String location = mZipCodeEditText.getText().toString();
             Intent intent = new Intent(SearchActivity.this, SearchResultsActivity.class);
+            intent.putExtra("location", location);
             startActivity(intent);
         }
     }

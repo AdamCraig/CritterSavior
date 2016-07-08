@@ -60,6 +60,7 @@ public class PetService {
                             .getString("$t");
                     String description;
 
+//                    Check if a description exists, output alternate string if not
                     try {
                         description = petJSON.getJSONObject("description")
                                 .getString("$t");
@@ -67,8 +68,30 @@ public class PetService {
                         description = "No description available.";
                     }
 
+//                    Reformat size from single letter to readable string
                     String size = petJSON.getJSONObject("size").getString("$t");
+                    if (size.equals("S")) {
+                        size = "Small";
+                    } else if (size.equals("M")) {
+                        size = "Medium";
+                    } else if (size.equals("L")) {
+                        size = "Large";
+                    } else if (size.equals("XL")) {
+                        size = "Giant";
+                    } else {
+                        size = "N/A";
+                    }
+
+//                    Reformat sex from single letter to readable string
                     String sex = petJSON.getJSONObject("sex").getString("$t");
+                    if (sex.equals("F")) {
+                        sex = "Female";
+                    } else if (sex.equals("M")) {
+                        sex = "Male";
+                    } else {
+                        sex = "N/A";
+                    }
+
                     String age = petJSON.getJSONObject("age").getString("$t");
 
                     String breed;

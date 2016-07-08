@@ -33,6 +33,11 @@ public class PetService {
 
     }
 
+    public String trim(String stringToTrim) {
+        String trimmedString = stringToTrim.substring(7, stringToTrim.length() - 2);
+        return trimmedString;
+    }
+
     public ArrayList<Pet> processResults(Response response) {
         ArrayList<Pet> pets = new ArrayList<>();
 
@@ -43,7 +48,7 @@ public class PetService {
                 JSONArray petsJSON = petListJSON.getJSONObject("petfinder").getJSONObject("pets").getJSONArray("pet");
                 for (int i = 0; i < petsJSON.length(); i++) {
                     JSONObject petJSON = petsJSON.getJSONObject(i);
-                    String name = petJSON.getString("name");
+                    String name = trim(petJSON.getString("name"));
                     String id = petJSON.getString("id");
                     String species = petJSON.getString("animal");
 //                    String imageUrl = petJSON.getJSONObject("media")
@@ -52,7 +57,6 @@ public class PetService {
 //                            .get(2)
 //                            .toString();
                     String imageUrl = "https://s-media-cache-ak0.pinimg.com/236x/a2/bd/97/a2bd97858694a7bbb46e6b875618a1e0.jpg";
-                    Log.v("image URL", imageUrl);
                     String size = petJSON.getString("size");
                     String sex = petJSON.getString("sex");
                     String age = petJSON.getString("age");

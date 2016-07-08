@@ -28,17 +28,6 @@ public class SearchResultsActivity extends AppCompatActivity implements View.OnC
 
     public ArrayList<Pet> mPets = new ArrayList<>();
 
-    private String[] pets = new String[] {
-            "Fluffy",
-            "Fido",
-            "Frank",
-            "Fred",
-            "Fantom",
-            "Floofy",
-    };
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +39,6 @@ public class SearchResultsActivity extends AppCompatActivity implements View.OnC
         String location = intent.getStringExtra("location");
 
         getPetsByLocation(location);
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, pets);
-        mPetsListView.setAdapter(adapter);
     }
 
     private void getPetsByLocation(String location) {
@@ -66,8 +52,21 @@ public class SearchResultsActivity extends AppCompatActivity implements View.OnC
 
             @Override
             public void onResponse(Call call, Response response) {
-
                 mPets = petService.processResults(response);
+
+                SearchResultsActivity.this.runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        String[] petNames = new String[mPets.size()];
+                        for (int i = 0; i < petNames.length; i++) {
+                            petNames[i] = mPets.get(i).getName();
+                        }
+
+                        ArrayAdapter adapter = new ArrayAdapter(SearchResultsActivity.this, android.R.layout.simple_list_item_1, petNames);
+                        mPetsListView.setAdapter(adapter);
+                    }
+                });
 
             }
         });

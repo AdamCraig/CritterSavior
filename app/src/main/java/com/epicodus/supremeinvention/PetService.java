@@ -34,8 +34,7 @@ public class PetService {
     }
 
     public String trim(String stringToTrim) {
-        String trimmedString = stringToTrim.substring(7, stringToTrim.length() - 2);
-        return trimmedString;
+        return stringToTrim.substring(7, stringToTrim.length() - 2);
     }
 
     public ArrayList<Pet> processResults(Response response) {
@@ -48,18 +47,18 @@ public class PetService {
                 JSONArray petsJSON = petListJSON.getJSONObject("petfinder").getJSONObject("pets").getJSONArray("pet");
                 for (int i = 0; i < petsJSON.length(); i++) {
                     JSONObject petJSON = petsJSON.getJSONObject(i);
-                    String name = trim(petJSON.getString("name"));
-                    String id = petJSON.getString("id");
-                    String species = petJSON.getString("animal");
-//                    String imageUrl = petJSON.getJSONObject("media")
-//                            .getJSONObject("photos")
-//                            .getJSONArray("photo")
-//                            .get(2)
-//                            .toString();
-                    String imageUrl = "https://s-media-cache-ak0.pinimg.com/236x/a2/bd/97/a2bd97858694a7bbb46e6b875618a1e0.jpg";
-                    String size = petJSON.getString("size");
-                    String sex = petJSON.getString("sex");
-                    String age = petJSON.getString("age");
+                    String name = petJSON.getJSONObject("name").getString("$t");
+                    String id = petJSON.getJSONObject("id").getString("$t");
+                    String species = petJSON.getJSONObject("animal").getString("$t");
+                    String imageUrl = petJSON.getJSONObject("media")
+                            .getJSONObject("photos")
+                            .getJSONArray("photo")
+                            .getJSONObject(2)
+                            .getString("$t");
+                    String description = petJSON.getJSONObject("description").getString("$t");
+                    String size = petJSON.getJSONObject("size").getString("$t");
+                    String sex = petJSON.getJSONObject("sex").getString("$t");
+                    String age = petJSON.getJSONObject("age").getString("$t");
 
                     String breed;
                     try {
@@ -73,7 +72,7 @@ public class PetService {
                                 .toString();
                     }
 
-                    Pet pet = new Pet(name, id, species, imageUrl, size, sex, age, breed);
+                    Pet pet = new Pet(name, id, species, imageUrl, description, size, sex, age, breed);
                     pets.add(pet);
                 }
             }

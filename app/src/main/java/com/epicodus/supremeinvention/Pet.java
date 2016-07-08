@@ -9,6 +9,7 @@ public class Pet {
     String mId;
     String mSpecies;
     String mImageUrl;
+    String mDescription;
     String mSize;
     String mSex;
     String mAge;
@@ -16,11 +17,12 @@ public class Pet {
 
     public Pet() {}
 
-    public Pet(String name, String id, String species, String imageUrl, String size, String sex, String age, String breed) {
+    public Pet(String name, String id, String species, String imageUrl, String description, String size, String sex, String age, String breed) {
         this.mName = name;
         this.mId = id;
         this.mSpecies = species;
         this.mImageUrl = imageUrl;
+        this.mDescription = description;
         this.mSize = size;
         this.mSex = sex;
         this.mAge = age;
@@ -37,6 +39,14 @@ public class Pet {
 
     public String getSpecies() {
         return mSpecies;
+    }
+
+    public String getImageUrl() {
+        return mImageUrl;
+    }
+
+    public String getDescription() {
+        return mDescription;
     }
 
     public String getSize() {

@@ -23,9 +23,9 @@ import butterknife.ButterKnife;
 public class PetProfileFragment extends Fragment {
     @Bind(R.id.petImageView) ImageView mImageLabel;
     @Bind(R.id.nameTextView) TextView mNameLabel;
-    @Bind(R.id.petBreedTextView) TextView mBreedLabel;
-    @Bind(R.id.petSexTextView) TextView mSexLabel;
-    @Bind(R.id.petSizeTextView) TextView mSizeLabel;
+    @Bind(R.id.breedTextView) TextView mBreedLabel;
+    @Bind(R.id.sexTextView) TextView mSexLabel;
+    @Bind(R.id.sizeTextView) TextView mSizeLabel;
     @Bind(R.id.descriptionTextView) TextView mDescriptionLabel;
     @Bind(R.id.ageTextView) TextView mAgeLabel;
     @Bind(R.id.favoritePetButton) Button mFavoritePetButton;

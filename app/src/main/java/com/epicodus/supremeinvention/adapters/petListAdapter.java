@@ -1,6 +1,7 @@
 package com.epicodus.supremeinvention.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.TextView;
 
 import com.epicodus.supremeinvention.R;
 import com.epicodus.supremeinvention.models.Pet;
+import com.epicodus.supremeinvention.ui.PetProfileActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -44,7 +48,7 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.PetViewH
         return mPets.size();
     }
 
-    public class PetViewHolder extends RecyclerView.ViewHolder {
+    public class PetViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.petImageView) ImageView mPetImageView;
         @Bind(R.id.nameTextView) TextView mPetNameTextView;
         @Bind(R.id.petBreedTextView) TextView mPetBreedTextView;
@@ -57,6 +61,17 @@ public class PetListAdapter extends RecyclerView.Adapter<PetListAdapter.PetViewH
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, PetProfileActivity.class);
+            intent.putExtra("position", itemPosition + "");
+            intent.putExtra("pets", Parcels.wrap(mPets));
+            mContext.startActivity(intent);
         }
 
         public void bindPet(Pet pet) {

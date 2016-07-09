@@ -139,7 +139,7 @@
             <Button
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="Adopt Me! (Send Email)"
+                android:text="Adopt Me! (Call Shelter)"
                 android:id="@+id/adoptButton"
                 android:background="@color/colorAccent2"
                 android:textColor="@color/colorPrimaryText"

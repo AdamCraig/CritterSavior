@@ -58,9 +58,23 @@ public class PetService {
                             .getJSONArray("photo")
                             .getJSONObject(2)
                             .getString("$t");
-                    String description;
+                    String email = petJSON.getJSONObject("contact")
+                            .getJSONObject("email")
+                            .getString("$t");
+
+//                    Check if a phone exists, set number as dummy if not
+                    String phone;
+                    try {
+                        phone = petJSON.getJSONObject("contact")
+                                .getJSONObject("phone")
+                                .getString("$t");
+                    } catch (JSONException e) {
+                        phone = "555-555-5555";
+                    }
+
 
 //                    Check if a description exists, output alternate string if not
+                    String description;
                     try {
                         description = petJSON.getJSONObject("description")
                                 .getString("$t");
@@ -107,7 +121,7 @@ public class PetService {
                                 .getString("$t");
                     }
 
-                    Pet pet = new Pet(name, id, species, imageUrl, description, size, sex, age, breed);
+                    Pet pet = new Pet(name, id, species, imageUrl, email, phone, description, size, sex, age, breed);
                     pets.add(pet);
                 }
             }

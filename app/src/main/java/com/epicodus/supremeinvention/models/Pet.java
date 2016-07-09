@@ -10,6 +10,8 @@ public class Pet {
     String mId;
     String mSpecies;
     String mImageUrl;
+    String mEmail;
+    String mPhone;
     String mDescription;
     String mSize;
     String mSex;
@@ -18,11 +20,13 @@ public class Pet {
 
     public Pet() {}
 
-    public Pet(String name, String id, String species, String imageUrl, String description, String size, String sex, String age, String breed) {
+    public Pet(String name, String id, String species, String imageUrl, String email, String phone, String description, String size, String sex, String age, String breed) {
         this.mName = name;
         this.mId = id;
         this.mSpecies = species;
         this.mImageUrl = imageUrl;
+        this.mEmail = email;
+        this.mPhone = phone;
         this.mDescription = description;
         this.mSize = size;
         this.mSex = sex;
@@ -44,6 +48,14 @@ public class Pet {
 
     public String getImageUrl() {
         return mImageUrl;
+    }
+
+    public String getEmail() {
+        return mEmail;
+    }
+
+    public String getPhone() {
+        return mPhone;
     }
 
     public String getDescription() {

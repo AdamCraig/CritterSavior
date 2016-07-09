@@ -1,6 +1,8 @@
 package com.epicodus.supremeinvention.ui;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Layout;
@@ -17,10 +19,12 @@ import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
+import java.util.ArrayList;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class PetProfileFragment extends Fragment {
+public class PetProfileFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.petImageView) ImageView mImageLabel;
     @Bind(R.id.nameTextView) TextView mNameLabel;
     @Bind(R.id.breedTextView) TextView mBreedLabel;
@@ -28,6 +32,7 @@ public class PetProfileFragment extends Fragment {
     @Bind(R.id.sizeTextView) TextView mSizeLabel;
     @Bind(R.id.descriptionTextView) TextView mDescriptionLabel;
     @Bind(R.id.ageTextView) TextView mAgeLabel;
+    @Bind(R.id.adoptButton) Button mAdoptButton;
     @Bind(R.id.favoritePetButton) Button mFavoritePetButton;
 
     private Pet mPet;
@@ -53,6 +58,8 @@ public class PetProfileFragment extends Fragment {
 
         Picasso.with(view.getContext()).load(mPet.getImageUrl()).into(mImageLabel);
 
+        mAdoptButton.setOnClickListener(this);
+
         mNameLabel.setText(mPet.getName());
         mBreedLabel.setText(mPet.getBreed());
         mSexLabel.setText(mPet.getSex());
@@ -61,6 +68,23 @@ public class PetProfileFragment extends Fragment {
         mAgeLabel.setText("Age: " + mPet.getAge());
 
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mAdoptButton) {
+
+//            Call The Shelter
+            Intent phoneIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + mPet.getPhone()));
+            startActivity(phoneIntent);
+
+//            Send An Email
+//            ArrayList<String> addresses = new ArrayList<>();
+//            addresses.add(mPet.getEmail());
+//            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+//            emailIntent.putExtra(Intent.EXTRA_EMAIL, addresses);
+//            startActivity(emailIntent);
+        }
     }
 
 

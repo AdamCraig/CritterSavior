@@ -31,7 +31,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:id="@+id/linearLayout"
-                android:layout_below="@+id/relativeLayout">
+                android:layout_below="@+id/relativeLayout"
+                android:layout_above="@+id/favoritePetButton">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -43,19 +44,21 @@
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal" />
 
             </LinearLayout>
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:text="Add To Favorites &lt;3"
                 android:id="@+id/favoritePetButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorAccent"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:layout_centerHorizontal="true" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -78,7 +81,6 @@
                     android:textSize="20sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold"
-                    android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true" />
 
                 <TextView
@@ -87,12 +89,13 @@
                     android:text="Breed"
                     android:id="@+id/breedTextView"
                     android:textColor="@color/colorSecondaryText"
-                    android:textStyle="italic"
-                    android:layout_marginRight="44dp"
-                    android:layout_marginEnd="44dp"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/nameTextView"
-                    android:layout_toStartOf="@+id/nameTextView" />
+                    android:singleLine="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/nameTextView"
+                    android:layout_alignRight="@+id/nameTextView"
+                    android:layout_alignEnd="@+id/nameTextView" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -100,12 +103,11 @@
                     android:text="Sex"
                     android:id="@+id/sexTextView"
                     android:textColor="@color/colorSecondaryText"
-                    android:textStyle="italic"
-                    android:layout_marginLeft="26dp"
-                    android:layout_marginStart="26dp"
                     android:layout_alignTop="@+id/breedTextView"
                     android:layout_toRightOf="@+id/nameTextView"
-                    android:layout_toEndOf="@+id/nameTextView" />
+                    android:singleLine="false"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -113,10 +115,12 @@
                     android:text="Age"
                     android:id="@+id/ageTextView"
                     android:textColor="@color/colorSecondaryText"
-                    android:textStyle="italic"
                     android:layout_alignParentBottom="true"
                     android:layout_alignLeft="@+id/breedTextView"
-                    android:layout_alignStart="@+id/breedTextView" />
+                    android:layout_alignStart="@+id/breedTextView"
+                    android:singleLine="false"
+                    android:layout_alignRight="@+id/breedTextView"
+                    android:layout_alignEnd="@+id/breedTextView" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -124,22 +128,25 @@
                     android:text="Size"
                     android:id="@+id/sizeTextView"
                     android:textColor="@color/colorSecondaryText"
-                    android:textStyle="italic"
                     android:layout_alignParentBottom="true"
                     android:layout_alignLeft="@+id/sexTextView"
-                    android:layout_alignStart="@+id/sexTextView" />
+                    android:layout_alignStart="@+id/sexTextView"
+                    android:singleLine="false"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large Text"
-                android:id="@+id/textView4"
+                android:text="Adopt Me! (Send Email)"
+                android:id="@+id/adoptButton"
+                android:background="@color/colorAccent2"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="15sp"
                 android:layout_above="@+id/favoritePetButton"
-                android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
-                android:textColor="@color/colorAccent" />
+                android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
     </LinearLayout>

@@ -7,13 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.epicodus.supremeinvention.ui.MyPreferencesActivity">
+    tools:context="com.epicodus.supremeinvention.ui.MyPreferencesActivity"
+    android:background="@color/colorBackground">
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:id="@+id/imageView7"
-        android:src="@drawable/logo"
+        android:src="@drawable/logo3"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -42,8 +43,9 @@
         android:id="@+id/favoritesButton"
         android:layout_below="@+id/imageView7"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimary"
-        android:textSize="30dp" />
+        android:background="@drawable/round_button"
+        android:textSize="30dp"
+        android:backgroundTint="@color/colorPrimary" />
 
     <TextView
         android:layout_width="wrap_content"

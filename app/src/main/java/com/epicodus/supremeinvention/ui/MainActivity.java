@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.epicodus.supremeinvention.R;
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.emailEntryEditText) EditText mEmailEntryEditText;
     @Bind(R.id.passwordEntryEditText) EditText mPasswordEntryEditText;
     @Bind(R.id.loginButton) Button mLoginButton;
+    @Bind(R.id.makeAccountTextView) TextView mMakeAccountTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mLoginButton.setOnClickListener(this);
+        mMakeAccountTextView.setOnClickListener(this);
     }
 
     @Override
@@ -32,6 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
             intent.putExtra("email", email);
             startActivity(intent);
+        }
+        if (view == mMakeAccountTextView) {
+            Intent intent = new Intent(MainActivity.this, CreateAccountActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 }

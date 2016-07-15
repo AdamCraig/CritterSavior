@@ -26,6 +26,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     @Bind(R.id.emailEntryEditText) EditText mEmailEntryEditText;
     @Bind(R.id.passwordEntryEditText) EditText mPasswordEntryEditText;
     @Bind(R.id.loginButton) Button mLoginButton;

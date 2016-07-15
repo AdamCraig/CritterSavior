@@ -12,9 +12,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.epicodus.supremeinvention.Constants;
 import com.epicodus.supremeinvention.R;
 import com.epicodus.supremeinvention.models.Pet;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -25,6 +31,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class PetProfileFragment extends Fragment implements View.OnClickListener {
+
     @Bind(R.id.petImageView) ImageView mImageLabel;
     @Bind(R.id.nameTextView) TextView mNameLabel;
     @Bind(R.id.breedTextView) TextView mBreedLabel;
@@ -59,6 +66,7 @@ public class PetProfileFragment extends Fragment implements View.OnClickListener
         Picasso.with(view.getContext()).load(mPet.getImageUrl()).into(mImageLabel);
 
         mAdoptButton.setOnClickListener(this);
+        mFavoritePetButton.setOnClickListener(this);
 
         mNameLabel.setText(mPet.getName());
         mBreedLabel.setText(mPet.getBreed());
@@ -84,6 +92,22 @@ public class PetProfileFragment extends Fragment implements View.OnClickListener
 //            Intent emailIntent = new Intent(Intent.ACTION_SEND);
 //            emailIntent.putExtra(Intent.EXTRA_EMAIL, addresses);
 //            startActivity(emailIntent);
+        }
+        if (v == mFavoritePetButton) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+
+            DatabaseReference favoritePetsRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_FAVORITE_PETS)
+                    .child(uid);
+
+            DatabaseReference pushRef = favoritePetsRef.push();
+            String pushId = pushRef.getKey();
+            mPet.setPushId(pushId);
+            pushRef.setValue(mPet);
+
+            Toast.makeText(getContext(), "Pet Saved To Favorites.", Toast.LENGTH_SHORT).show();
         }
     }
 

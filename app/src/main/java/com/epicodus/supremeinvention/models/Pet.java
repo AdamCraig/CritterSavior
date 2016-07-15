@@ -17,6 +17,7 @@ public class Pet {
     String mSex;
     String mAge;
     String mBreed;
+    private String pushId;
 
     public Pet() {}
 
@@ -76,5 +77,13 @@ public class Pet {
 
     public String getBreed() {
         return mBreed;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }

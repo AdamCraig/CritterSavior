@@ -8,36 +8,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.epicodus.supremeinvention.ui.WelcomeActivity"
-    android:clickable="true">
+    android:clickable="true"
+    android:background="@color/colorBackground">
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:id="@+id/imageView2"
-        android:src="@drawable/logo"
+        android:src="@drawable/logo3"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-        android:id="@+id/imageView3"
-        android:src="@drawable/dog1"
-        android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="My Preferences"
-        android:id="@+id/preferencesButton"
-        android:textSize="24dp"
-        android:background="@color/colorAccent"
-        android:clickable="true"
-        android:layout_marginBottom="61dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
@@ -45,10 +25,40 @@
         android:text="Start A New Search"
         android:id="@+id/searchButton"
         android:textSize="24dp"
-        android:background="@color/colorAccent2"
+        android:background="@drawable/round_button"
+        android:layout_above="@+id/favoritesButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/colorAccent2" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Favorites"
+        android:id="@+id/favoritesButton"
+        android:textSize="24dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimaryLight"
         android:layout_above="@+id/preferencesButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="20dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Preferences"
+        android:id="@+id/preferencesButton"
+        android:textSize="24dp"
+        android:background="@drawable/round_button"
+        android:clickable="true"
+        android:layout_marginBottom="29dp"
+        android:allowUndo="false"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

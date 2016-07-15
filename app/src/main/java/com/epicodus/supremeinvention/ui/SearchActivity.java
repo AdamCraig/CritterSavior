@@ -35,7 +35,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
 
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mLocationPreference = mSharedPreferences.getString(Constants.PREFERENCES_ZIP_KEY, null);
 
         if (mLocationPreference != null) {

@@ -83,12 +83,15 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="No account? Make one here!"
         android:id="@+id/makeAccountTextView"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         android:clickable="true"
-        android:layout_below="@+id/loginButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
-        android:focusable="false" />
+        android:focusable="false"
+        android:background="@drawable/round_button"
+        android:padding="10dp"
+        android:backgroundTint="@color/colorAccent2"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

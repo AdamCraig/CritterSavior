@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Supreme Invention Pet Finder</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="species">
+        <item>Canine</item>
+        <item>Feline</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>

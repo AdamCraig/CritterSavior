@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.searchButton) Button mSearchButton;
     @Bind(R.id.preferencesButton) Button mPreferencesButton;
+    @Bind(R.id.favoritesButton) Button mFavoritesButton;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -44,8 +45,10 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
             }
         };
 
-        mPreferencesButton.setOnClickListener(this);
         mSearchButton.setOnClickListener(this);
+        mFavoritesButton.setOnClickListener(this);
+        mPreferencesButton.setOnClickListener(this);
+
     }
 
     @Override
@@ -79,10 +82,15 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
             Intent intent = new Intent(WelcomeActivity.this, SearchActivity.class);
             startActivity(intent);
         }
+        if (view == mFavoritesButton) {
+            Intent intent = new Intent(WelcomeActivity.this, MyFavoritesActivity.class);
+            startActivity(intent);
+        }
         if (view == mPreferencesButton) {
             Intent intent = new Intent(WelcomeActivity.this, MyPreferencesActivity.class);
             startActivity(intent);
         }
+
 
     }
 

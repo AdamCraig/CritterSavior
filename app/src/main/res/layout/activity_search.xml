@@ -7,13 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.epicodus.supremeinvention.ui.SearchActivity">
+    tools:context="com.epicodus.supremeinvention.ui.SearchActivity"
+    android:background="@color/colorBackground">
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:id="@+id/imageView4"
-        android:src="@drawable/logo"
+        android:src="@drawable/search1"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -31,19 +32,19 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/zipCodeEditText"
-        android:layout_below="@+id/searchTitleTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
         android:hint="Zip Code"
         android:textAlignment="center"
-        android:inputType="number" />
+        android:inputType="number"
+        android:layout_below="@+id/requiredTextView"
+        android:layout_alignLeft="@+id/speciesEditText"
+        android:layout_alignStart="@+id/speciesEditText" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/speciesEditText"
-        android:hint="Species (Radio Buttons)"
+        android:hint="Species (Spinner)"
         android:textAlignment="center"
         android:inputType="number"
         android:layout_below="@+id/zipCodeEditText"
@@ -54,7 +55,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/sizeEditText"
-        android:hint="Size (Dropdown)"
+        android:hint="Size (Spinner)"
         android:textAlignment="center"
         android:inputType="number"
         android:enabled="true"
@@ -85,7 +86,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/sexEditText"
-        android:hint="Sex (Radio Buttons)"
+        android:hint="Sex (Switch)"
         android:textAlignment="center"
         android:inputType="number"
         android:enabled="true"
@@ -97,7 +98,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/breedEditText"
-        android:hint="Breed (Dropdown)"
+        android:hint="Breed (Spinner)"
         android:textAlignment="center"
         android:inputType="number"
         android:enabled="true"
@@ -109,7 +110,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/ageEditText"
-        android:hint="Age (Dropdown)"
+        android:hint="Age (Spinner)"
         android:textAlignment="center"
         android:inputType="number"
         android:enabled="true"

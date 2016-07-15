@@ -23,11 +23,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.loginButton) Button mLoginButton;
     @Bind(R.id.makeAccountTextView) TextView mMakeAccountTextView;
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mAuth = FirebaseAuth.getInstance();
+
         mLoginButton.setOnClickListener(this);
         mMakeAccountTextView.setOnClickListener(this);
     }
@@ -35,14 +40,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == mLoginButton) {
-            String email = mEmailEntryEditText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-            startActivity(intent);
+            loginWithPassword();
         }
         if (view == mMakeAccountTextView) {
             Intent intent = new Intent(MainActivity.this, CreateAccountActivity.class);
             startActivity(intent);
             finish();
+        }
+    }
+
+    private void loginWithPassword() {
+        String email = mEmailEntryEditText.getText().toString().trim();
+        String password = mPasswordEntryEditText.getText().toString().trim();
+        if (email.equals("")) {
+            mEmailEntryEditText.setError("Please enter your email.");
+            return;
+        }
+        if (password.equals("")) {
+            mPasswordEntryEditText.setError("Please enter your password.");
+            return;
         }
     }
 }

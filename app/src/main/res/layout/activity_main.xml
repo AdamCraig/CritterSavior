@@ -68,9 +68,10 @@
         android:id="@+id/loginButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimary"
         android:textColor="@color/colorTextIcons"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/colorPrimary" />
 
 
 </RelativeLayout>

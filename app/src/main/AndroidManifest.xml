@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.epicodus.supremeinvention">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -43,7 +43,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.supremeinvention.ui.SearchResultsActivity" />
         </activity>
-
+        <activity android:name=".ui.CreateAccountActivity"></activity>
     </application>
 
 </manifest>

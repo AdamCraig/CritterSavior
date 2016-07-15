@@ -27,11 +27,10 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class SearchResultsActivity extends AppCompatActivity implements View.OnClickListener {
+public class SearchResultsActivity extends AppCompatActivity {
     public static final String TAG = SearchResultsActivity.class.getSimpleName();
 
     @Bind(R.id.petsListRecyclerView) RecyclerView mPetsListRecyclerView;
-    @Bind(R.id.petProfileButton) Button mPetProfileButton;
 
     private PetListAdapter mAdapter;
 
@@ -42,7 +41,6 @@ public class SearchResultsActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
         ButterKnife.bind(this);
-        mPetProfileButton.setOnClickListener(this);
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
@@ -77,13 +75,5 @@ public class SearchResultsActivity extends AppCompatActivity implements View.OnC
 
             }
         });
-    }
-
-    @Override
-    public void onClick(View view) {
-        if (view == mPetProfileButton) {
-            Intent intent = new Intent(SearchResultsActivity.this, PetProfileActivity.class);
-            startActivity(intent);
-        }
     }
 }

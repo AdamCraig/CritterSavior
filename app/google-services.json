@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "787546629404",
+    "firebase_url": "https://pet-finder-a9ff3.firebaseio.com",
+    "project_id": "pet-finder-a9ff3",
+    "storage_bucket": "pet-finder-a9ff3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787546629404:android:0bd57906adab3f2e",
+        "android_client_info": {
+          "package_name": "com.epicodus.supremeinvention"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787546629404-sqgh8pkfor66o418qi5alail4g83chuo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epicodus.supremeinvention",
+            "certificate_hash": "D48B4307DF99F05A02444DE5C2EE0D47A9C96474"
+          }
+        },
+        {
+          "client_id": "787546629404-9i4jommn1n7br7ks82ghgnq8ir7no74b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJGKGYM2rykePBhg6Evt4ODkCn_VejpcE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787546629404-9i4jommn1n7br7ks82ghgnq8ir7no74b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

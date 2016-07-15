@@ -14,7 +14,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="#ffffff"
+        android:background="@color/colorBackground"
         android:layout_height="match_parent"
         android:padding="10dp">
 
@@ -25,31 +25,30 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="Pet Name"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Breed"
+            android:text="Breed (icon here)"
             android:id="@+id/petBreedTextView"
             android:textStyle="italic"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sex"
+            android:text="Sex (icon here)"
             android:id="@+id/petSexTextView"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Size"
+            android:text="Size (icon here)"
             android:id="@+id/petSizeTextView"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

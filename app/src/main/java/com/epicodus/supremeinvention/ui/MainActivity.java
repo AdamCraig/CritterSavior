@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == mLoginButton) {
             String email = mEmailEntryEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-            intent.putExtra("email", email);
             startActivity(intent);
         }
         if (view == mMakeAccountTextView) {

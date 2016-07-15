@@ -44,13 +44,12 @@
                         android:text="Description description description description description description description description description description description description description description description"
                         android:id="@+id/descriptionTextView"
                         android:drawablePadding="4dp"
-                        android:textColor="@color/colorTextIcons"
+                        android:textColor="@color/colorPrimaryText"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="10dp"
                         android:gravity="center"
-                        android:layout_gravity="center_horizontal"
-                        android:textAlignment="textStart" />
+                        android:layout_gravity="center_horizontal" />
                 </ScrollView>
 
             </LinearLayout>
@@ -71,7 +70,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@android:color/white"
+                android:background="@color/colorBackground"
                 android:paddingTop="20dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
@@ -102,6 +101,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_toStartOf="@+id/nameTextView"
+                    android:layout_toLeftOf="@+id/nameTextView"
                     android:layout_alignRight="@+id/nameTextView"
                     android:layout_alignEnd="@+id/nameTextView" />
 

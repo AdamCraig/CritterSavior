@@ -26,16 +26,6 @@
         android:layout_below="@+id/imageView2"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Welcome!"
-        android:id="@+id/welcomeTitleTextView"
-        android:layout_below="@+id/imageView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp" />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,10 +34,10 @@
         android:textSize="24dp"
         android:background="@color/colorAccent"
         android:clickable="true"
-        android:layout_above="@+id/logoutButton"
+        android:layout_marginBottom="61dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="38dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="match_parent"
@@ -60,14 +50,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="20dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log Out"
-        android:id="@+id/logoutButton"
-        android:textSize="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

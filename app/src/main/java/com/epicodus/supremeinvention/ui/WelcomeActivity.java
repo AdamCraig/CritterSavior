@@ -19,10 +19,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.welcomeTitleTextView) TextView mWelcomeTitleTextView;
     @Bind(R.id.searchButton) Button mSearchButton;
     @Bind(R.id.preferencesButton) Button mPreferencesButton;
-    @Bind(R.id.logoutButton) Button mLogoutButton;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -48,7 +46,6 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
 
         mPreferencesButton.setOnClickListener(this);
         mSearchButton.setOnClickListener(this);
-        mLogoutButton.setOnClickListener(this);
     }
 
     @Override
@@ -84,10 +81,6 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         }
         if (view == mPreferencesButton) {
             Intent intent = new Intent(WelcomeActivity.this, MyPreferencesActivity.class);
-            startActivity(intent);
-        }
-        if (view == mLogoutButton) {
-            Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
             startActivity(intent);
         }
 

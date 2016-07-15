@@ -1,5 +1,6 @@
 package com.epicodus.supremeinvention.ui;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -33,11 +34,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+    private ProgressDialog mAuthProgressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        createAuthProgressDialog();
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -56,6 +61,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mLoginButton.setOnClickListener(this);
         mMakeAccountTextView.setOnClickListener(this);
+    }
+
+    private void createAuthProgressDialog() {
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.setMessage("Authenticating credentials...");
+        mAuthProgressDialog.setCancelable(false);
     }
 
     @Override
@@ -83,11 +95,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
+        mAuthProgressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        mAuthProgressDialog.dismiss();
+
                         if (!task.isSuccessful()) {
                             Log.w("MainActivity", "signInWithEmail", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",

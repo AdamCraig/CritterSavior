@@ -44,11 +44,11 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/emailEntryEditText"
-        android:layout_below="@+id/taglineTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
         android:hint="Email"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_below="@+id/taglineTextView"
+        android:layout_alignLeft="@+id/passwordEntryEditText"
+        android:layout_alignStart="@+id/passwordEntryEditText" />
 
     <EditText
         android:layout_width="wrap_content"

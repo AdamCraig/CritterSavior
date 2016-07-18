@@ -6,77 +6,77 @@ import java.util.ArrayList;
 
 @Parcel
 public class Pet {
-    String mName;
-    String mId;
-    String mSpecies;
-    String mImageUrl;
-    String mEmail;
-    String mPhone;
-    String mDescription;
-    String mSize;
-    String mSex;
-    String mAge;
-    String mBreed;
+    String name;
+    String id;
+    String species;
+    String imageUrl;
+    String email;
+    String phone;
+    String description;
+    String size;
+    String sex;
+    String age;
+    String breed;
     private String pushId;
 
     public Pet() {}
 
     public Pet(String name, String id, String species, String imageUrl, String email, String phone, String description, String size, String sex, String age, String breed) {
-        this.mName = name;
-        this.mId = id;
-        this.mSpecies = species;
-        this.mImageUrl = imageUrl;
-        this.mEmail = email;
-        this.mPhone = phone;
-        this.mDescription = description;
-        this.mSize = size;
-        this.mSex = sex;
-        this.mAge = age;
-        this.mBreed = breed;
+        this.name = name;
+        this.id = id;
+        this.species = species;
+        this.imageUrl = imageUrl;
+        this.email = email;
+        this.phone = phone;
+        this.description = description;
+        this.size = size;
+        this.sex = sex;
+        this.age = age;
+        this.breed = breed;
     }
 
     public String getName() {
-        return mName;
+        return name;
     }
 
     public String getId() {
-        return mId;
+        return id;
     }
 
     public String getSpecies() {
-        return mSpecies;
+        return species;
     }
 
     public String getImageUrl() {
-        return mImageUrl;
+        return imageUrl;
     }
 
     public String getEmail() {
-        return mEmail;
+        return email;
     }
 
     public String getPhone() {
-        return mPhone;
+        return phone;
     }
 
     public String getDescription() {
-        return mDescription;
+        return description;
     }
 
     public String getSize() {
-        return mSize;
+        return size;
     }
 
     public String getSex() {
-        return mSex;
+        return sex;
     }
 
     public String getAge() {
-        return mAge;
+        return age;
     }
 
     public String getBreed() {
-        return mBreed;
+        return breed;
     }
 
     public String getPushId() {

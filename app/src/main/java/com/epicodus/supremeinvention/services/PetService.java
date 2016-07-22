@@ -48,8 +48,6 @@ public class PetService {
 
         String url = Constants.PET_BASE_URL + "breed.list?format=json&key=" + Constants.PET_CONSUMER_KEY + "&animal=" + species;
 
-        Log.v("BREED URL", url);
-
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -160,11 +158,10 @@ public class PetService {
 
         try {
             String jsonData = response.body().string();
-            Log.v("jsonData", jsonData + "");
+
             if (response.isSuccessful()) {
                 JSONObject breedListJSON = new JSONObject(jsonData);
                 JSONArray breedsJSON = breedListJSON.getJSONObject("petfinder").getJSONObject("breeds").getJSONArray("breed");
-                Log.v("breedsJSON", breedsJSON + "");
                 for (int i = 0; i < breedsJSON.length(); i++) {
                     JSONObject breedJSON = breedsJSON.getJSONObject(i);
                     String breed = breedJSON.getString("$t");

@@ -46,6 +46,8 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_search_filters);
         ButterKnife.bind(this);
 
+        mBreedSpinner.setVisibility(View.INVISIBLE);
+
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
         String species = intent.getStringExtra("species");
@@ -99,18 +101,15 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
             public void onResponse(Call call, Response response) {
                 mBreeds = petService.processBreedResults(response);
                 Log.v("mBreeds", mBreeds + "");
-//
-//                SearchFiltersActivity.this.runOnUiThread(new Runnable() {
-//
-//                    @Override
-//                    public void run() {
-//                        mAdapter = new PetListAdapter(getApplicationContext(), mPets);
-//                        mPetsListRecyclerView.setAdapter(mAdapter);
-//                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchResultsActivity.this);
-//                        mPetsListRecyclerView.setLayoutManager(layoutManager);
-//                        mPetsListRecyclerView.setHasFixedSize(true);
-//                    }
-//                });
+
+                SearchFiltersActivity.this.runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        mBreedSpinner.setAdapter(new ArrayAdapter<String>(SearchFiltersActivity.this, R.layout.spinner_item, mBreeds));
+                        mBreedSpinner.setVisibility(View.VISIBLE);
+                    }
+                });
 
             }
         });

@@ -36,11 +36,11 @@ public class PetService {
 
     }
 
-    public static void getBreedList(Callback callback) {
+    public static void getBreedList(String species, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
-        String url = Constants.PET_BASE_URL + "breed.list?format=json&key=" + Constants.PET_CONSUMER_KEY + "&animal=";
+        String url = Constants.PET_BASE_URL + "breed.list?format=json&key=" + Constants.PET_CONSUMER_KEY + "&animal=" + species;
 
         Request request = new Request.Builder()
                 .url(url)

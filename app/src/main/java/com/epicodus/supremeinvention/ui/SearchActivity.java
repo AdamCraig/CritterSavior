@@ -1,9 +1,7 @@
 package com.epicodus.supremeinvention.ui;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.epicodus.supremeinvention.Constants;
 import com.epicodus.supremeinvention.R;
@@ -31,13 +28,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     @Bind(R.id.nextStepButton) Button mNextStepButton;
     @Bind(R.id.zipCodeEditText) EditText mZipCodeEditText;
-    @Bind(R.id.speciesSpinner) Spinner mSpeciesSpinner;
-//    @Bind(R.id.optionalTextView) TextView mOptionalTextView;
-//    @Bind(R.id.sizeSpinner) Spinner mSizeSpinner;
-//    @Bind(R.id.sexSpinner) Spinner mSexSpinner;
-//    @Bind(R.id.breedEditText) EditText mBreedEditText;
-//    @Bind(R.id.ageEditText) EditText mAgeEditText;
-
+    @Bind(R.id.sizeSpinner) Spinner mSpeciesSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +86,10 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 intent.putExtra("species", species);
                 startActivity(intent);
             } else {
-
+                Intent intent = new Intent(SearchActivity.this, SearchFiltersActivity.class);
+                intent.putExtra("location", location);
+                intent.putExtra("species", species);
+                startActivity(intent);
             }
 
         }

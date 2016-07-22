@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.epicodus.supremeinvention.ui.SearchActivity"
+    tools:context="com.epicodus.supremeinvention.ui.SearchFiltersActivity"
     android:background="@color/colorBackground">
 
     <ImageView
@@ -18,74 +18,86 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/zipCodeEditText"
-        android:hint="Zip Code"
-        android:textAlignment="center"
-        android:inputType="number"
-        android:backgroundTint="@color/colorPrimary"
-        android:textSize="28sp"
-        android:layout_below="@+id/addFiltersTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp" />
-
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/sizeSpinner"
         android:textAlignment="center"
-        android:spinnerMode="dialog"
+        android:spinnerMode="dropdown"
         android:backgroundTint="@color/colorPrimaryDark"
         android:clickable="true"
         android:dropDownWidth="match_parent"
         android:contextClickable="false"
-        android:layout_below="@+id/whatKindTextView"
         android:layout_marginTop="30dp"
-        android:layout_alignLeft="@+id/zipCodeEditText"
-        android:layout_alignStart="@+id/zipCodeEditText"
-        android:layout_alignRight="@+id/zipCodeEditText"
-        android:layout_alignEnd="@+id/zipCodeEditText" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/addFiltersTextView" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next Step"
-        android:id="@+id/nextStepButton"
+        android:text="Start Search"
+        android:id="@+id/startSearchButton"
         android:textStyle="bold"
         android:textSize="30dp"
         android:background="@drawable/round_button"
         android:textColor="@color/colorTextIcons"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_below="@+id/sizeSpinner"
-        android:layout_alignLeft="@+id/whatKindTextView"
-        android:layout_alignStart="@+id/whatKindTextView"
-        android:layout_marginTop="57dp" />
+        android:backgroundTint="@color/colorAccent"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/ageSpinner"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="What area should we show you adoptable animals from?"
+        android:text="Add additional filters to your search below."
         android:id="@+id/addFiltersTextView"
         android:textAlignment="center"
         android:layout_below="@+id/pinImageView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
+    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="What kind of animal are you looking for?"
-        android:id="@+id/whatKindTextView"
+        android:ems="10"
+        android:id="@+id/breedSpinner"
         android:textAlignment="center"
-        android:layout_below="@+id/zipCodeEditText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="27dp" />
+        android:spinnerMode="dropdown"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:dropDownWidth="match_parent"
+        android:contextClickable="false"
+        android:layout_below="@+id/sizeSpinner"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/sexSpinner"
+        android:textAlignment="center"
+        android:spinnerMode="dropdown"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:dropDownWidth="match_parent"
+        android:contextClickable="false"
+        android:layout_below="@+id/breedSpinner"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/ageSpinner"
+        android:textAlignment="center"
+        android:spinnerMode="dropdown"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:dropDownWidth="match_parent"
+        android:contextClickable="false"
+        android:layout_below="@+id/sexSpinner"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

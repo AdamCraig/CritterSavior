@@ -43,7 +43,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.supremeinvention.ui.SearchResultsActivity" />
         </activity>
-        <activity android:name=".ui.CreateAccountActivity"></activity>
+        <activity android:name=".ui.CreateAccountActivity" />
+        <activity android:name=".ui.SearchFiltersActivity"></activity>
     </application>
 
 </manifest>

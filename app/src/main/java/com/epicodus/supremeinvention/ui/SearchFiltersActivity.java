@@ -3,23 +3,36 @@ package com.epicodus.supremeinvention.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
 import com.epicodus.supremeinvention.R;
+import com.epicodus.supremeinvention.adapters.PetListAdapter;
+import com.epicodus.supremeinvention.services.PetService;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class SearchFiltersActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private ArrayList<String> mBreeds = new ArrayList<>();
     private String[] speciesList = { "All Animals", "Dog"};
     private String[] sizeList = {"Any", "Small", "Medium", "Large", "Extra Large"};
     private String[] breedList = {"Any"};
     private String[] sexList = {"Any", "Female", "Male"};
     private String[] ageList = {"Any", "Baby", "Young", "Adult", "Senior"};
+
 
     @Bind(R.id.sizeSpinner) Spinner mSizeSpinner;
     @Bind(R.id.breedSpinner) Spinner mBreedSpinner;
@@ -54,6 +67,8 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
         mAgeSpinner.setAdapter(ageSpinnerAdapter);
 
         mStartSearchButton.setOnClickListener(this);
+
+        getBreedList(species);
     }
 
     @Override
@@ -69,5 +84,35 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
             finalSearchIntent.putExtra("species", species);
             startActivity(finalSearchIntent);
         }
+    }
+
+    private void getBreedList(String species) {
+        final PetService petService = new PetService();
+        petService.getBreedList(species, new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) {
+                mBreeds = petService.processBreedResults(response);
+                Log.v("mBreeds", mBreeds + "");
+//
+//                SearchFiltersActivity.this.runOnUiThread(new Runnable() {
+//
+//                    @Override
+//                    public void run() {
+//                        mAdapter = new PetListAdapter(getApplicationContext(), mPets);
+//                        mPetsListRecyclerView.setAdapter(mAdapter);
+//                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchResultsActivity.this);
+//                        mPetsListRecyclerView.setLayoutManager(layoutManager);
+//                        mPetsListRecyclerView.setHasFixedSize(true);
+//                    }
+//                });
+
+            }
+        });
     }
 }

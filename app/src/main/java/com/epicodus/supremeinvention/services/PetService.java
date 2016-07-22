@@ -33,7 +33,6 @@ public class PetService {
             url = Constants.PET_BASE_URL + "pet.find?format=json&key=" + Constants.PET_CONSUMER_KEY + "&location=" + location + "&animal=" + species;
         }
 
-
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -47,7 +46,9 @@ public class PetService {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
-        String url = Constants.PET_BASE_URL + "breed.list?format=json&key=" + Constants.PET_CONSUMER_KEY + species;
+        String url = Constants.PET_BASE_URL + "breed.list?format=json&key=" + Constants.PET_CONSUMER_KEY + "&animal=" + species;
+
+        Log.v("BREED URL", url);
 
         Request request = new Request.Builder()
                 .url(url)
@@ -152,5 +153,30 @@ public class PetService {
             e.printStackTrace();
         }
         return pets;
+    }
+
+    public ArrayList<String> processBreedResults(Response response) {
+        ArrayList<String> breeds = new ArrayList<>();
+
+        try {
+            String jsonData = response.body().string();
+            Log.v("jsonData", jsonData + "");
+            if (response.isSuccessful()) {
+                JSONObject breedListJSON = new JSONObject(jsonData);
+                JSONArray breedsJSON = breedListJSON.getJSONObject("petfinder").getJSONObject("breeds").getJSONArray("breed");
+                Log.v("breedsJSON", breedsJSON + "");
+                for (int i = 0; i < breedsJSON.length(); i++) {
+                    JSONObject breedJSON = breedsJSON.getJSONObject(i);
+                    String breed = breedJSON.getString("$t");
+
+                    breeds.add(breed);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return breeds;
     }
 }

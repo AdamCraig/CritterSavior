@@ -18,15 +18,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Start A New Search"
-        android:id="@+id/searchTitleTextView"
-        android:layout_below="@+id/imageView4"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,8 +28,9 @@
         android:inputType="number"
         android:backgroundTint="@color/colorPrimary"
         android:textSize="28sp"
-        android:layout_below="@+id/searchTitleTextView"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/whatAreaTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -46,90 +38,54 @@
         android:ems="10"
         android:id="@+id/speciesSpinner"
         android:textAlignment="center"
-        android:layout_below="@+id/zipCodeEditText"
         android:spinnerMode="dialog"
-        android:layout_above="@+id/optionalTextView"
         android:backgroundTint="@color/colorPrimaryDark"
         android:clickable="true"
         android:dropDownWidth="match_parent"
         android:contextClickable="false"
-        android:layout_alignLeft="@+id/searchTitleTextView"
-        android:layout_alignStart="@+id/searchTitleTextView"
-        android:layout_alignRight="@+id/searchTitleTextView"
-        android:layout_alignEnd="@+id/searchTitleTextView" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/sizeSpinner"
-        android:textAlignment="center"
-        android:inputType="number"
-        android:enabled="true"
-        android:layout_below="@+id/optionalTextView"
-        android:layout_alignLeft="@+id/speciesSpinner"
-        android:layout_alignStart="@+id/speciesSpinner"
-        android:layout_alignRight="@+id/speciesSpinner"
-        android:layout_alignEnd="@+id/speciesSpinner" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Optional"
-        android:id="@+id/optionalTextView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/sexEditText"
-        android:hint="Sex (Switch)"
-        android:textAlignment="center"
-        android:inputType="number"
-        android:enabled="true"
-        android:layout_below="@+id/sizeSpinner"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/breedEditText"
-        android:hint="Breed (Spinner)"
-        android:textAlignment="center"
-        android:inputType="number"
-        android:enabled="true"
-        android:layout_below="@+id/sexEditText"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/ageEditText"
-        android:hint="Age (Spinner)"
-        android:textAlignment="center"
-        android:inputType="number"
-        android:enabled="true"
-        android:layout_below="@+id/breedEditText"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/whatKindTextView"
+        android:layout_marginTop="30dp"
+        android:layout_alignLeft="@+id/zipCodeEditText"
+        android:layout_alignStart="@+id/zipCodeEditText"
+        android:layout_alignRight="@+id/zipCodeEditText"
+        android:layout_alignEnd="@+id/zipCodeEditText" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Search"
-        android:id="@+id/searchButton"
+        android:text="Next Step"
+        android:id="@+id/nextStepButton"
         android:textStyle="bold"
         android:textSize="30dp"
         android:background="@drawable/round_button"
         android:textColor="@color/colorTextIcons"
-        android:layout_below="@+id/ageEditText"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:backgroundTint="@color/colorPrimary" />
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_below="@+id/speciesSpinner"
+        android:layout_alignLeft="@+id/whatKindTextView"
+        android:layout_alignStart="@+id/whatKindTextView"
+        android:layout_marginTop="57dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="What area should we show you adoptable animals from?"
+        android:id="@+id/whatAreaTextView"
+        android:textAlignment="center"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="What kind of animal are you looking for?"
+        android:id="@+id/whatKindTextView"
+        android:textAlignment="center"
+        android:layout_below="@+id/zipCodeEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp" />
 
 </RelativeLayout>

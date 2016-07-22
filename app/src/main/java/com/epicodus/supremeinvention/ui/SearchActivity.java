@@ -1,5 +1,6 @@
 package com.epicodus.supremeinvention.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.Preference;
@@ -28,9 +29,15 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     private String mLocationPreference;
     private String[] speciesList = { "Select Species", "Dog", "Cat", "Small Mammal", "Bird", "Horse", "Reptile", "Farm Animal", "Pig"};
 
-    @Bind(R.id.searchButton) Button mSearchButton;
+    @Bind(R.id.nextStepButton) Button mNextStepButton;
     @Bind(R.id.zipCodeEditText) EditText mZipCodeEditText;
     @Bind(R.id.speciesSpinner) Spinner mSpeciesSpinner;
+//    @Bind(R.id.optionalTextView) TextView mOptionalTextView;
+//    @Bind(R.id.sizeSpinner) Spinner mSizeSpinner;
+//    @Bind(R.id.sexSpinner) Spinner mSexSpinner;
+//    @Bind(R.id.breedEditText) EditText mBreedEditText;
+//    @Bind(R.id.ageEditText) EditText mAgeEditText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +45,14 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, speciesList);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mSpeciesSpinner.setAdapter(adapter);
+        ArrayAdapter<String> speciesSpinnerAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, speciesList);
+        speciesSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpeciesSpinner.setAdapter(speciesSpinnerAdapter);
 
         mSpeciesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View selectedItemView, int position, long id) {
+
                 Log.v("item selected", adapterView.getItemAtPosition(position).toString());
             }
 
@@ -63,14 +71,12 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             mZipCodeEditText.setText(mLocationPreference);
         }
 
-
-
-        mSearchButton.setOnClickListener(this);
+        mNextStepButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if (view == mSearchButton) {
+        if (view == mNextStepButton) {
             String location = mZipCodeEditText.getText().toString();
 
             addToSharedPreferences(location);
@@ -84,4 +90,5 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     private void addToSharedPreferences(String location) {
         mEditor.putString(Constants.PREFERENCES_ZIP_KEY, location).apply();
     }
+
 }

@@ -2,7 +2,7 @@
     <string name="app_name">Supreme Invention Pet Finder</string>
 
     <string-array name="species">
-        <item>Select Species</item>
+        <item>All Species</item>
         <item>Dog</item>
         <item>Cat</item>
         <item>Small Mammal</item>

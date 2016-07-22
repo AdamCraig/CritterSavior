@@ -27,7 +27,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
     private String mLocationPreference;
-    private String[] speciesList = { "Select Species", "Dog", "Cat", "Small Mammal", "Bird", "Horse", "Reptile", "Farm Animal", "Pig"};
+    private String[] speciesList = { "All Animals", "Dog", "Cat", "Small Mammal", "Bird", "Horse", "Reptile", "Farm Animal", "Pig"};
 
     @Bind(R.id.nextStepButton) Button mNextStepButton;
     @Bind(R.id.zipCodeEditText) EditText mZipCodeEditText;
@@ -52,8 +52,12 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         mSpeciesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View selectedItemView, int position, long id) {
-
-                Log.v("item selected", adapterView.getItemAtPosition(position).toString());
+                if (mSpeciesSpinner.getSelectedItem().toString().equals("All Animals")) {
+                    mNextStepButton.setText("Start Search");
+                } else {
+                    mNextStepButton.setText("Next Step");
+                }
+                Log.v("SPECIES SELECTED", adapterView.getItemAtPosition(position).toString());
             }
 
             @Override
@@ -81,14 +85,59 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
             addToSharedPreferences(location);
 
-            Intent intent = new Intent(SearchActivity.this, SearchResultsActivity.class);
-            intent.putExtra("location", location);
-            startActivity(intent);
+            String species = "all";
+            String selectedSpecies = mSpeciesSpinner.getSelectedItem().toString();
+            species = formatSpecies(selectedSpecies);
+
+            if (species.equals("all")) {
+                Intent intent = new Intent(SearchActivity.this, SearchResultsActivity.class);
+                intent.putExtra("location", location);
+                intent.putExtra("species", species);
+                startActivity(intent);
+            } else {
+
+            }
+
         }
     }
 
     private void addToSharedPreferences(String location) {
         mEditor.putString(Constants.PREFERENCES_ZIP_KEY, location).apply();
+    }
+
+    private String formatSpecies(String speciesSpinnerSelection) {
+        switch (speciesSpinnerSelection) {
+            case "All Animals": {
+                return "all";
+            }
+            case "Dog": {
+                return "dog";
+            }
+            case "Cat": {
+                return "cat";
+            }
+            case "Small Mammal": {
+                return "smallfurry";
+            }
+            case "Bird": {
+                return "bird";
+            }
+            case "Horse": {
+                return "horse";
+            }
+            case "Reptile": {
+                return "reptile";
+            }
+            case "Farm Animal": {
+                return "barnyard";
+            }
+            case "Pig": {
+                return "pig";
+            }
+            default: {
+                return "all";
+            }
+        }
     }
 
 }

@@ -63,7 +63,9 @@ public class PetProfileFragment extends Fragment implements View.OnClickListener
         View view = inflater.inflate(R.layout.fragment_pet_profile, container, false);
         ButterKnife.bind(this, view);
 
-        Picasso.with(view.getContext()).load(mPet.getImageUrl()).into(mImageLabel);
+        Picasso.with(view.getContext())
+                .load(mPet.getImageUrl())
+                .into(mImageLabel);
 
         mAdoptButton.setOnClickListener(this);
         mFavoritePetButton.setOnClickListener(this);

@@ -23,15 +23,15 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/sizeSpinner"
-        android:textAlignment="center"
         android:spinnerMode="dropdown"
         android:backgroundTint="@color/colorPrimaryDark"
         android:clickable="true"
-        android:dropDownWidth="match_parent"
+        android:dropDownWidth="fill_parent"
         android:contextClickable="false"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/addFiltersTextView" />
+        android:layout_below="@+id/addFiltersTextView"
+        android:textAlignment="center" />
 
     <Button
         android:layout_width="match_parent"
@@ -70,7 +70,8 @@
         android:dropDownWidth="match_parent"
         android:contextClickable="false"
         android:layout_below="@+id/sizeSpinner"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -84,7 +85,8 @@
         android:dropDownWidth="match_parent"
         android:contextClickable="false"
         android:layout_below="@+id/breedSpinner"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -98,6 +100,7 @@
         android:dropDownWidth="match_parent"
         android:contextClickable="false"
         android:layout_below="@+id/sexSpinner"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
 
 </RelativeLayout>

@@ -38,13 +38,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.supremeinvention.ui.SearchActivity" />
         </activity>
-        <activity android:name=".ui.PetProfileActivity">
+        <activity android:name=".ui.PetProfileActivity" />
+        <activity android:name=".ui.CreateAccountActivity" />
+        <activity android:name=".ui.SearchFiltersActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.supremeinvention.ui.SearchResultsActivity" />
+                android:value="com.epicodus.supremeinvention.ui.SearchActivity" />
         </activity>
-        <activity android:name=".ui.CreateAccountActivity" />
-        <activity android:name=".ui.SearchFiltersActivity"></activity>
     </application>
 
 </manifest>

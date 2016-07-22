@@ -36,19 +36,18 @@
         android:textAlignment="center"
         android:inputType="number"
         android:layout_below="@+id/requiredTextView"
-        android:layout_alignLeft="@+id/speciesEditText"
-        android:layout_alignStart="@+id/speciesEditText" />
+        android:layout_alignLeft="@+id/sizeEditText"
+        android:layout_alignStart="@+id/sizeEditText" />
 
-    <EditText
+    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/speciesEditText"
-        android:hint="Species (Spinner)"
+        android:id="@+id/speciesSpinner"
         android:textAlignment="center"
-        android:inputType="number"
         android:layout_below="@+id/zipCodeEditText"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:entries="@array/species"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -125,10 +124,11 @@
         android:id="@+id/searchButton"
         android:textStyle="bold"
         android:textSize="30dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/round_button"
         android:textColor="@color/colorTextIcons"
         android:layout_below="@+id/ageEditText"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/colorPrimary" />
 
 </RelativeLayout>

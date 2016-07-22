@@ -25,7 +25,7 @@ public class PetService {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
-        String url = Constants.PET_BASE_URL + Constants.PET_CONSUMER_KEY + "&location=" + location;
+        String url = Constants.PET_BASE_URL + "pet.find?format=json&key=" + Constants.PET_CONSUMER_KEY + "&location=" + location;
 
         Request request = new Request.Builder()
                 .url(url)
@@ -34,6 +34,20 @@ public class PetService {
         Call call = client.newCall(request);
         call.enqueue(callback);
 
+    }
+
+    public static void getBreedList(Callback callback) {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .build();
+
+        String url = Constants.PET_BASE_URL + "breed.list?format=json&key=" + Constants.PET_CONSUMER_KEY + "&animal=";
+
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        Call call = client.newCall(request);
+        call.enqueue(callback);
     }
 
     public String trim(String stringToTrim) {

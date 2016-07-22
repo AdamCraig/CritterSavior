@@ -75,7 +75,7 @@ public class FirebasePetViewHolder extends RecyclerView.ViewHolder implements Vi
                 Intent intent = new Intent(mContext, PetProfileActivity.class);
                 intent.putExtra("position", itemPosition + "");
                 intent.putExtra("pets", Parcels.wrap(pets));
-
+                intent.putExtra("origin", mContext.getClass().getSimpleName());
                 mContext.startActivity(intent);
             }
 

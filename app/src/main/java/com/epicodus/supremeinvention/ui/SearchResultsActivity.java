@@ -30,7 +30,6 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class SearchResultsActivity extends AppCompatActivity {
-    public static final String TAG = SearchResultsActivity.class.getSimpleName();
 
     @Bind(R.id.petsListRecyclerView) RecyclerView mPetsListRecyclerView;
     @Bind(R.id.noResultsImageView) ImageView mNoResultsImageView;

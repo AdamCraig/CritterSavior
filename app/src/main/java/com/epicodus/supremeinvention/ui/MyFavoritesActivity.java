@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.epicodus.supremeinvention.Constants;
 import com.epicodus.supremeinvention.R;
@@ -17,8 +19,13 @@ import com.epicodus.supremeinvention.models.Pet;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -26,8 +33,11 @@ import butterknife.ButterKnife;
 public class MyFavoritesActivity extends AppCompatActivity {
     private DatabaseReference mPetReference;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
+    private ArrayList<Pet> favoritePets = new ArrayList<>();
 
     @Bind(R.id.petsListRecyclerView) RecyclerView mRecyclerView;
+    @Bind(R.id.noResultsImageView) ImageView mNoResultsImageView;
+    @Bind(R.id.noResultsTextView) TextView mNoResultsTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +53,28 @@ public class MyFavoritesActivity extends AppCompatActivity {
                 .getInstance()
                 .getReference(Constants.FIREBASE_CHILD_FAVORITE_PETS)
                 .child(uid);
+
+        mPetReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    favoritePets.add(snapshot.getValue(Pet.class));
+                }
+
+                if (favoritePets.isEmpty()) {
+                    mNoResultsImageView.setVisibility(View.VISIBLE);
+                    mNoResultsTextView.setText("Your favorites list is empty! Head back to the search and add some critters!");
+                    mNoResultsTextView.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
 
         setUpFirebaseAdapter();
     }

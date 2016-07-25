@@ -49,7 +49,6 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
         mBreedSpinner.setVisibility(View.INVISIBLE);
 
         Intent intent = getIntent();
-        String location = intent.getStringExtra("location");
         String species = intent.getStringExtra("species");
 
         ArrayAdapter<String> sizeSpinnerAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, sizeList);
@@ -81,11 +80,13 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
             String location = searchParametersIntent.getStringExtra("location");
             String species = searchParametersIntent.getStringExtra("species");
             String size = formatSize(mSizeSpinner.getSelectedItem().toString());
+            String breed = mBreedSpinner.getSelectedItem().toString();
 
             Intent finalSearchIntent = new Intent(SearchFiltersActivity.this, SearchResultsActivity.class);
             finalSearchIntent.putExtra("location", location);
             finalSearchIntent.putExtra("species", species);
             finalSearchIntent.putExtra("size", size);
+            finalSearchIntent.putExtra("breed", breed);
             startActivity(finalSearchIntent);
         }
     }
@@ -129,7 +130,7 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
         } else if (size.equals("Extra Large")) {
             return "XL";
         } else {
-            return "any";
+            return "Any Size";
         }
     }
 }

@@ -84,7 +84,8 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 Intent intent = new Intent(SearchActivity.this, SearchResultsActivity.class);
                 intent.putExtra("location", location);
                 intent.putExtra("species", species);
-                intent.putExtra("size", "any");
+                intent.putExtra("size", "Any Size");
+                intent.putExtra("breed", "Any Breed");
                 startActivity(intent);
             } else {
                 Intent intent = new Intent(SearchActivity.this, SearchFiltersActivity.class);

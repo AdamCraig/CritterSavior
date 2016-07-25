@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -32,6 +33,8 @@ public class SearchResultsActivity extends AppCompatActivity {
     public static final String TAG = SearchResultsActivity.class.getSimpleName();
 
     @Bind(R.id.petsListRecyclerView) RecyclerView mPetsListRecyclerView;
+    @Bind(R.id.noResultsImageView) ImageView mNoResultsImageView;
+    @Bind(R.id.noResultsTextView) TextView mNoResultsTextView;
 
     private PetListAdapter mAdapter;
 
@@ -72,6 +75,11 @@ public class SearchResultsActivity extends AppCompatActivity {
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchResultsActivity.this);
                         mPetsListRecyclerView.setLayoutManager(layoutManager);
                         mPetsListRecyclerView.setHasFixedSize(true);
+
+                        if (mPets.isEmpty()) {
+                            mNoResultsImageView.setVisibility(View.VISIBLE);
+                            mNoResultsTextView.setVisibility(View.VISIBLE);
+                        }
                     }
                 });
 

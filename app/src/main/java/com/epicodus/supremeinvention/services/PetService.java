@@ -21,7 +21,7 @@ import okhttp3.Response;
 public class PetService {
     public static final String TAG = PetService.class.getSimpleName();
 
-    public static void findPetsByLocation(String location, String species, Callback callback) {
+    public static void findPetsByLocation(String location, String species, String size, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
@@ -31,7 +31,13 @@ public class PetService {
             url = Constants.PET_BASE_URL + "pet.find?format=json&key=" + Constants.PET_CONSUMER_KEY + "&location=" + location;
         } else {
             url = Constants.PET_BASE_URL + "pet.find?format=json&key=" + Constants.PET_CONSUMER_KEY + "&location=" + location + "&animal=" + species;
+
+            if (!size.equals("any")) {
+                url += ("&size=" + size);
+            }
         }
+        Log.v("size", size);
+        Log.v("URL", url);
 
         Request request = new Request.Builder()
                 .url(url)
@@ -111,7 +117,7 @@ public class PetService {
                     } else if (size.equals("L")) {
                         size = "Large";
                     } else if (size.equals("XL")) {
-                        size = "Giant";
+                        size = "Extra Large";
                     } else {
                         size = "N/A";
                     }

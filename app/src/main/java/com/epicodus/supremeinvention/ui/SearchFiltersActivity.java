@@ -28,10 +28,10 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
 
     private ArrayList<String> mBreeds = new ArrayList<>();
     private String[] speciesList = { "All Animals", "Dog"};
-    private String[] sizeList = {"Any", "Small", "Medium", "Large", "Extra Large"};
-    private String[] breedList = {"Any"};
-    private String[] sexList = {"Any", "Female", "Male"};
-    private String[] ageList = {"Any", "Baby", "Young", "Adult", "Senior"};
+    private String[] sizeList = {"Any Size", "Small", "Medium", "Large", "Extra Large"};
+    private String[] breedList = {"Any Breed"};
+    private String[] sexList = {"Any Sex", "Female", "Male"};
+    private String[] ageList = {"Any Age", "Baby", "Young", "Adult", "Senior"};
 
 
     @Bind(R.id.sizeSpinner) Spinner mSizeSpinner;
@@ -80,10 +80,12 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
             Intent searchParametersIntent = getIntent();
             String location = searchParametersIntent.getStringExtra("location");
             String species = searchParametersIntent.getStringExtra("species");
+            String size = formatSize(mSizeSpinner.getSelectedItem().toString());
 
             Intent finalSearchIntent = new Intent(SearchFiltersActivity.this, SearchResultsActivity.class);
             finalSearchIntent.putExtra("location", location);
             finalSearchIntent.putExtra("species", species);
+            finalSearchIntent.putExtra("size", size);
             startActivity(finalSearchIntent);
         }
     }
@@ -94,12 +96,14 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
 
             @Override
             public void onFailure(Call call, IOException e) {
+                mBreeds.add(0, "Any Breed");
                 e.printStackTrace();
             }
 
             @Override
             public void onResponse(Call call, Response response) {
                 mBreeds = petService.processBreedResults(response);
+                mBreeds.add(0, "Any Breed");
                 Log.v("mBreeds", mBreeds + "");
 
                 SearchFiltersActivity.this.runOnUiThread(new Runnable() {
@@ -113,5 +117,19 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
 
             }
         });
+    }
+
+    public String formatSize(String size) {
+        if (size.equals("Small")) {
+            return "S";
+        } else if (size.equals("Medium")) {
+            return "M";
+        } else if (size.equals("Large")) {
+            return "L";
+        } else if (size.equals("Extra Large")) {
+            return "XL";
+        } else {
+            return "any";
+        }
     }
 }

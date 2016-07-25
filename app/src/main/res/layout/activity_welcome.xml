@@ -40,25 +40,9 @@
         android:textSize="24dp"
         android:background="@drawable/round_button"
         android:backgroundTint="@color/colorPrimaryLight"
-        android:layout_above="@+id/preferencesButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="My Preferences"
-        android:id="@+id/preferencesButton"
-        android:textSize="24dp"
-        android:background="@drawable/round_button"
-        android:clickable="true"
-        android:layout_marginBottom="29dp"
-        android:allowUndo="false"
-        android:backgroundTint="@color/colorAccent"
-        android:textColor="@color/colorTextIcons"
+        android:layout_marginBottom="81dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

@@ -24,9 +24,6 @@
                 android:value="com.epicodus.supremeinvention.ui.WelcomeActivity" />
         </activity>
         <activity android:name=".ui.MyFavoritesActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.supremeinvention.ui.MyPreferencesActivity" />
         </activity>
         <activity android:name=".ui.SearchActivity">
             <meta-data

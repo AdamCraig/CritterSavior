@@ -21,7 +21,7 @@ import okhttp3.Response;
 public class PetService {
     public static final String TAG = PetService.class.getSimpleName();
 
-    public static void findPetsByLocation(String location, String species, String size, String breed, String sex, Callback callback) {
+    public static void findPetsByLocation(String location, String species, String size, String breed, String sex, String age, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
@@ -40,6 +40,9 @@ public class PetService {
             }
             if (!sex.equals("Any Sex")) {
                 url += ("&sex=" + sex);
+            }
+            if (!age.equals("Any Age")) {
+                url += ("&age=" + age);
             }
         }
 

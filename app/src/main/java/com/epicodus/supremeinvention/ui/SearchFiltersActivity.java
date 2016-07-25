@@ -82,6 +82,7 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
             String size = formatSize(mSizeSpinner.getSelectedItem().toString());
             String breed = mBreedSpinner.getSelectedItem().toString();
             String sex = formatSex(mSexSpinner.getSelectedItem().toString());
+            String age = mAgeSpinner.getSelectedItem().toString();
 
             Intent finalSearchIntent = new Intent(SearchFiltersActivity.this, SearchResultsActivity.class);
             finalSearchIntent.putExtra("location", location);
@@ -89,6 +90,7 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
             finalSearchIntent.putExtra("size", size);
             finalSearchIntent.putExtra("breed", breed);
             finalSearchIntent.putExtra("sex", sex);
+            finalSearchIntent.putExtra("age", age);
             startActivity(finalSearchIntent);
         }
     }
@@ -122,6 +124,7 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
         });
     }
 
+    // formatting methods to match user input to API-accepted queries
     public String formatSize(String size) {
         if (size.equals("Small")) {
             return "S";

@@ -50,13 +50,14 @@ public class SearchResultsActivity extends AppCompatActivity {
         String species = intent.getStringExtra("species");
         String size = intent.getStringExtra("size");
         String breed = intent.getStringExtra("breed");
+        String sex = intent.getStringExtra("sex");
 
-        getPetsByLocation(location, species, size, breed);
+        getPetsByLocation(location, species, size, breed, sex);
     }
 
-    private void getPetsByLocation(String location, String species, String size, String breed) {
+    private void getPetsByLocation(String location, String species, String size, String breed, String sex) {
         final PetService petService = new PetService();
-        petService.findPetsByLocation(location, species, size, breed, new Callback() {
+        petService.findPetsByLocation(location, species, size, breed, sex, new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {

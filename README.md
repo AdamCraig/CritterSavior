@@ -25,7 +25,7 @@ Adam Craig at ajcraig@suffolk.edu_
 
 ## Technologies Used
 
-_Java, Gradle, Android Framework, Android Studio_
+_Java, Gradle, Android Framework, Android Studio, PetFinder API_
 
 ### License
 

@@ -1,4 +1,4 @@
-package com.epicodus.supremeinvention.adapters;
+package com.epicodus.CritterSavior.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.epicodus.supremeinvention.Constants;
-import com.epicodus.supremeinvention.R;
-import com.epicodus.supremeinvention.models.Pet;
-import com.epicodus.supremeinvention.ui.PetProfileActivity;
+import com.epicodus.CritterSavior.Constants;
+import com.epicodus.CritterSavior.R;
+import com.epicodus.CritterSavior.models.Pet;
+import com.epicodus.CritterSavior.ui.PetProfileActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

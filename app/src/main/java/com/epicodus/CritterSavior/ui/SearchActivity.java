@@ -1,4 +1,4 @@
-package com.epicodus.supremeinvention.ui;
+package com.epicodus.CritterSavior.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,8 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.epicodus.supremeinvention.Constants;
-import com.epicodus.supremeinvention.R;
+import com.epicodus.CritterSavior.Constants;
+import com.epicodus.CritterSavior.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

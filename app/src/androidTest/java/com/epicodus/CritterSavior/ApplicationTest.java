@@ -1,4 +1,4 @@
-package com.epicodus.supremeinvention;
+package com.epicodus.CritterSavior;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

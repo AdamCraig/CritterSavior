@@ -1,11 +1,10 @@
-package com.epicodus.supremeinvention.ui;
+package com.epicodus.CritterSavior.ui;
 
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.epicodus.supremeinvention.Constants;
-import com.epicodus.supremeinvention.R;
-import com.epicodus.supremeinvention.models.Pet;
+import com.epicodus.CritterSavior.Constants;
+import com.epicodus.CritterSavior.R;
+import com.epicodus.CritterSavior.models.Pet;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -24,8 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
-
-import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

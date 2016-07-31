@@ -1,11 +1,11 @@
-package com.epicodus.supremeinvention.adapters;
+package com.epicodus.CritterSavior.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.epicodus.supremeinvention.models.Pet;
-import com.epicodus.supremeinvention.ui.PetProfileFragment;
+import com.epicodus.CritterSavior.models.Pet;
+import com.epicodus.CritterSavior.ui.PetProfileFragment;
 
 import java.util.ArrayList;
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.epicodus.supremeinvention.ui.SearchResultsActivity">
+    tools:context="com.epicodus.CritterSavior.ui.SearchResultsActivity">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

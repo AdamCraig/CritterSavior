@@ -1,8 +1,6 @@
-package com.epicodus.supremeinvention.models;
+package com.epicodus.CritterSavior.models;
 
 import org.parceler.Parcel;
-
-import java.util.ArrayList;
 
 @Parcel
 public class Pet {

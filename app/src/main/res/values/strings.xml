@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Supreme Invention Pet Finder</string>
+    <string name="app_name">CritterSavior</string>
 
     <string-array name="species">
         <item>All Species</item>

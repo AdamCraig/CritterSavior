@@ -1,24 +1,18 @@
-package com.epicodus.supremeinvention.ui;
+package com.epicodus.CritterSavior.ui;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.epicodus.supremeinvention.R;
-import com.epicodus.supremeinvention.adapters.PetListAdapter;
-import com.epicodus.supremeinvention.models.Pet;
-import com.epicodus.supremeinvention.services.PetService;
+import com.epicodus.CritterSavior.R;
+import com.epicodus.CritterSavior.adapters.PetListAdapter;
+import com.epicodus.CritterSavior.models.Pet;
+import com.epicodus.CritterSavior.services.PetService;
 
 import java.io.IOException;
 import java.util.ArrayList;

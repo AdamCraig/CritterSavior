@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.epicodus.supremeinvention.ui.MainActivity"
+    tools:context="com.epicodus.CritterSavior.ui.MainActivity"
     android:background="@color/colorBackground">
 
     <ImageView
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Supreme Invention Pet Finder"
+        android:text="CritterSavior Pet Finder"
         android:id="@+id/titleTextView"
         android:textSize="22sp"
         android:layout_marginTop="36dp"
@@ -87,7 +87,7 @@
         android:clickable="true"
         android:focusable="false"
         android:background="@drawable/round_button"
-        android:padding="10dp"
+        android:padding="20dp"
         android:backgroundTint="@color/colorAccent2"
         android:textSize="18sp"
         android:layout_alignParentBottom="true"

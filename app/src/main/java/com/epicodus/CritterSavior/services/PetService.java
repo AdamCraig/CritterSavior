@@ -1,9 +1,9 @@
-package com.epicodus.supremeinvention.services;
+package com.epicodus.CritterSavior.services;
 
 import android.util.Log;
 
-import com.epicodus.supremeinvention.Constants;
-import com.epicodus.supremeinvention.models.Pet;
+import com.epicodus.CritterSavior.Constants;
+import com.epicodus.CritterSavior.models.Pet;
 
 import org.json.JSONArray;
 import org.json.JSONException;

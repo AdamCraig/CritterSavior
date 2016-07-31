@@ -1,4 +1,4 @@
-package com.epicodus.supremeinvention.adapters;
+package com.epicodus.CritterSavior.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.epicodus.supremeinvention.R;
-import com.epicodus.supremeinvention.models.Pet;
-import com.epicodus.supremeinvention.ui.PetProfileActivity;
+import com.epicodus.CritterSavior.R;
+import com.epicodus.CritterSavior.models.Pet;
+import com.epicodus.CritterSavior.ui.PetProfileActivity;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;

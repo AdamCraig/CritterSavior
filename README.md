@@ -1,6 +1,6 @@
-# _Supreme Invention Pet Finder (Name Pending)_
+# _CritterSavior_
 
-#### _An Android app that allows users to search for nearby adoptable cats and dogs by many criteria, set up profiles, and more._
+#### _An Android app that allows users to search for nearby adoptable cats and dogs with a robust set of search options and filters. Users can be as general or specific as they like with their searches, from "Any Animal" to "Medium-Sized Female Senior Golden Retriever"._
 
 #### By _**Adam Craig**_
 
@@ -25,7 +25,7 @@ Adam Craig at ajcraig@suffolk.edu_
 
 ## Technologies Used
 
-_Java, Gradle, Android Framework, Android Studio_
+_Java, Gradle, Android Framework, Android Studio, PetFinder API_
 
 ### License
 

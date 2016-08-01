@@ -70,9 +70,9 @@ public class PetProfileFragment extends Fragment implements View.OnClickListener
         mNameLabel.setText(mPet.getName());
         mBreedLabel.setText(mPet.getBreed());
         mSexLabel.setText(mPet.getSex());
-        mSizeLabel.setText("Size: " + mPet.getSize());
+        mSizeLabel.setText(mPet.getSize());
         mDescriptionLabel.setText(mPet.getDescription());
-        mAgeLabel.setText("Age: " + mPet.getAge());
+        mAgeLabel.setText(mPet.getAge());
 
         return view;
     }

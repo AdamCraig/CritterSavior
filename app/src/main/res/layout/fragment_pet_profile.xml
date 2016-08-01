@@ -15,7 +15,8 @@
             android:layout_height="250dp"
             android:id="@+id/petImageView"
             android:src="@drawable/dog1"
-            android:scaleType="centerCrop" />
+            android:scaleType="fitCenter"
+            android:background="@color/colorPrimaryText" />
 
         <RelativeLayout
             android:layout_width="match_parent"

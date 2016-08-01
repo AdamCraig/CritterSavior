@@ -15,7 +15,7 @@ _An Android mobile app that empowers users to search for adoptable pets using a 
 ## Setup/Installation Requirements
 
 * _Ensure that Android Studio is installed on your machine._
-* _Using the command line, clone the supreme-invention repository to your desktop using the command "git clone https://github.com/AdamCraig/supreme-invention"_
+* _Using the command line, clone the CritterSavior repository to your desktop using the command "git clone https://github.com/AdamCraig/CritterSavior"_
 * _Open the package using Android Studio, choose your emulator, and run the app._
 
 ## Known Bugs

@@ -17,25 +17,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.epicodus.CritterSavior.ui.WelcomeActivity" />
-        <activity android:name=".ui.MyPreferencesActivity">
+        <activity android:name="com.epicodus.CritterSavior.ui.WelcomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.CritterSavior.ui.WelcomeActivity" />
         </activity>
-        <activity android:name="com.epicodus.CritterSavior.ui.MyFavoritesActivity">
-        </activity>
+        <activity android:name="com.epicodus.CritterSavior.ui.MyFavoritesActivity"
+                  android:theme="@style/NoActionBarTheme" />
         <activity android:name="com.epicodus.CritterSavior.ui.SearchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.CritterSavior.ui.WelcomeActivity" />
         </activity>
-        <activity android:name="com.epicodus.CritterSavior.ui.SearchResultsActivity">
+        <activity android:name="com.epicodus.CritterSavior.ui.SearchResultsActivity"
+                  android:theme="@style/NoActionBarTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.CritterSavior.ui.SearchActivity" />
         </activity>
-        <activity android:name="com.epicodus.CritterSavior.ui.PetProfileActivity" />
+        <activity android:name="com.epicodus.CritterSavior.ui.PetProfileActivity"
+                  android:theme="@style/NoActionBarTheme" />
         <activity android:name="com.epicodus.CritterSavior.ui.CreateAccountActivity" />
         <activity android:name="com.epicodus.CritterSavior.ui.SearchFiltersActivity">
             <meta-data

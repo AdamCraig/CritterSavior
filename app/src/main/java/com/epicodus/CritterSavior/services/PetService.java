@@ -28,9 +28,9 @@ public class PetService {
         String url;
 
         if (species.equals("all")) {
-            url = Constants.PET_BASE_URL + "pet.find?format=json&key=" + Constants.PET_CONSUMER_KEY + "&location=" + location;
+            url = Constants.PET_BASE_URL + "pet.find?format=json&key=" + Constants.PET_CONSUMER_KEY + "&count=40&location=" + location;
         } else {
-            url = Constants.PET_BASE_URL + "pet.find?format=json&key=" + Constants.PET_CONSUMER_KEY + "&location=" + location + "&animal=" + species;
+            url = Constants.PET_BASE_URL + "pet.find?format=json&key=" + Constants.PET_CONSUMER_KEY + "&count=40&location=" + location + "&animal=" + species;
 
             if (!size.equals("Any Size")) {
                 url += ("&size=" + size);

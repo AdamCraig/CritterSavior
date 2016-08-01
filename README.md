@@ -1,3 +1,7 @@
+![Home, Search Activity, Search Results](screenshot1.png)
+
+![Search Filters, Pet Profile, Call Shelter Link](screenshot2.png)
+
 # _CritterSavior_
 
 #### _An Android app that allows users to search for nearby adoptable cats and dogs with a robust set of search options and filters. Users can be as general or specific as they like with their searches, from "Any Animal" to "Medium-Sized Female Senior Golden Retriever"._
